@@ -38,31 +38,17 @@ public class US_09 {
         WebElement a =driver.findElement(By.linkText("Become a Vendor"));
         a.click();
 
-        driver.findElement(By.id("user_email")).sendKeys("haeden.kervin@falkcia.com");
+        driver.findElement(By.id("user_email")).sendKeys("amartya.oluwapelumi@falkcia.com");
         driver.findElement(By.id("passoword")).sendKeys("1234Sa.");
         driver.findElement(By.id("confirm_pwd")).sendKeys("1234Sa.");
         WebElement register1=driver.findElement(By.id("wcfm_membership_register_button"));
 
         Thread.sleep(60000);
         register1.click();
+        System.out.println("ali");
 
-        List<WebElement> tag=driver.findElements(By.tagName("h1"));
-
-
-        for (WebElement w:tag) {
-
-            if (w.getText().equals("Welcome to Allover Commerce!")){
-                System.out.println(w.getText());
-
-                Assertions.assertEquals("Welcome to Allover Commerce!",w.getText());
-
-
-
-            }
-
-
-        }
-
+         WebElement tag = driver.findElement(By.xpath("(//h1)[2]"));
+         tag.getText().equals("Welcome to Allover Commerce!");
 
 
 
